@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Testing <code>download</code> in a Windows PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <!--  Styles  -->
+  <link rel="stylesheet" href="/c/default.css">
+</head>
+<body>
+  <header>
+    <h1>Testing <code>download</code> in a Windows PWA</h1>
+  </header>
+  
+  <main>
+    <p>Tests:</p>
+    <ul>
+      <li><a href="/README.md" download>Local Download</a></li>
+      <li><a href="https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085cf14.svg" download>Cross-origin Download</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p><a href="https://caniuse.com/#search=download%20attribute">Support for <code>download</code></a></p>
+  </footer>
+  
+  <!-- Scripts -->
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>
