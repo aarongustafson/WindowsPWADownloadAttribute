@@ -15,6 +15,8 @@
 
   function download(uri)
   {
+    console.log('trying to download', uri);
+
     var filename = uri.split('/').pop(),
         requestOperations = [],
         download,
@@ -23,12 +25,14 @@
     if ( ! filename || filename == '' )
     {
       filename = 'download-' + (new Date).getTime();
+      console.log('created a filename', filename);
     }
     
     // Create the new file to download
     Windows.Storage.DownloadsFolder.createFileAsync(filename, Windows.Storage.CreationCollisionOption.generateUniqueName)
       .done(function(newFile){
-      
+        console.log('new file', newFile);
+
         // set up the download
         download = downloader.createDownload(uri, newFile);
         download.priority = Windows.Networking.BackgroundTransfer.BackgroundTransferPriority.high;
