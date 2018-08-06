@@ -57,7 +57,9 @@
 
         requestPromise.done(function(){
           promise = download.startAsync().then(function(){
-            notify(filename + ' downloaded');
+            if ( window.toast ){
+              window.toast(filename + ' downloaded');
+            }
           });
         });
 

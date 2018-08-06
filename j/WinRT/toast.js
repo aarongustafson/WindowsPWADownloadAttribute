@@ -5,7 +5,7 @@
       template = Notifications.ToastTemplateType.toastText01,
       toastXML = NotificationManager.getTemplateContent(Notifications.ToastTemplateType[template]);
 
-  function toast(msg){
+  window.toast = function( msg ){
     toastXML.getElementsByTagName("text")[0].appendChild(
       toastXML.createTextNode( msg )
     );
