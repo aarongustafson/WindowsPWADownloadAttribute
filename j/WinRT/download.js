@@ -25,7 +25,7 @@
     }
     
     // Create the new file to download
-    Windows.Storage.DownloadsFolder.CreateFileAsync(filename, Windows.Storage.CreationCollisionOption.generateUniqueName)
+    Windows.Storage.DownloadsFolder.createFileAsync(filename, Windows.Storage.CreationCollisionOption.generateUniqueName)
       .done(function(newFile){
       
         // set up the download
