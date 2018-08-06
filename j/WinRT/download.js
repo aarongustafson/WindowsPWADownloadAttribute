@@ -6,6 +6,7 @@
   document.body.addEventListener('click',function(e){
     if (e.target.matches('a[download]'))
     {
+      e.preventDefault();
       download(e.target.href);
     }
   }, false);
