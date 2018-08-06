@@ -26,6 +26,9 @@
       filename = 'download-' + (new Date).getTime();
       console.log('created a filename', filename);
     }
+
+    // Make it a Windows URI
+    uri = new Windows.Foundation.Uri(uri);
     
     // Create the new file to download
     Windows.Storage.DownloadsFolder.createFileAsync(filename, Windows.Storage.CreationCollisionOption.generateUniqueName)
