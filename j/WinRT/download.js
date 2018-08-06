@@ -21,9 +21,9 @@
         requestOperations = [],
         download;
     
-    if ( ! filename || filename == '' )
+    if ( ! filename || filename === '' )
     {
-      filename = 'download-' + (new Date).getTime();
+      filename = 'download-' + (new Date()).getTime();
       console.log('created a filename', filename);
     }
 
@@ -57,7 +57,7 @@
 
         requestPromise.done(function(){
           promise = download.startAsync().then(function(){
-            console.log('download complete');
+            notify(filename + ' downloaded');
           });
         });
 

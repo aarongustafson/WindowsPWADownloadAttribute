@@ -15,3 +15,24 @@ if ( 'Windows' in window )
   });
 
 }
+
+// notifications
+function notify(msg)
+{
+  if ( "Notification" in window) {
+    notify = function(){ return; };
+    return;
+  }
+  if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    new Notification(msg);
+  }
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        new Notification(msg);
+      }
+    });
+  }
+}
