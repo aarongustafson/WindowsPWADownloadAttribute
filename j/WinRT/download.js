@@ -19,8 +19,7 @@
 
     var filename = uri.split('/').pop(),
         requestOperations = [],
-        download,
-        promise;
+        download;
     
     if ( ! filename || filename == '' )
     {
@@ -43,10 +42,12 @@
 
         try {
           requestPromise = Windows.Networking.BackgroundTransfer.BackgroundDownloader.requestUnconstrainedDownloadsAsync(requestOperations);
-        } catch (error) {
+        }
+        catch (error)
+        {
           if (error.number === notImplementedException) {
-              displayError("BackgroundDownloader.requestUnconstrainedDownloadsAsync is not supported in Windows Phone.");
-              return;
+            displayError("BackgroundDownloader.requestUnconstrainedDownloadsAsync is not supported in Windows Phone.");
+            return;
           }
           throw error;
         }
