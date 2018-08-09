@@ -11,7 +11,14 @@
     }
   }, false);
 
-  var downloader = new Windows.Networking.BackgroundTransfer.BackgroundDownloader();
+  var downloader = new Windows.Networking.BackgroundTransfer.BackgroundDownloader(),
+      can_notify = (Notification.permission === 'default');
+  
+  if ( ! can_notify )
+  {
+    // this is actually an auto-approval in Windows PWA
+    Notification.requestPermission();
+  }
 
   function download(uri)
   {
@@ -57,9 +64,7 @@
 
         requestPromise.done(function(){
           promise = download.startAsync().then(function(){
-            if ( window.toast ){
-              window.toast(filename + ' downloaded');
-            }
+            Notification(filename + ' downloaded');
           });
         });
 
