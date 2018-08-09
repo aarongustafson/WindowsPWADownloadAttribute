@@ -12,8 +12,8 @@
   }, false);
 
   var downloader = new Windows.Networking.BackgroundTransfer.BackgroundDownloader(),
-      can_notify = (Notification.permission === 'default');
-  
+      can_notify = (Notification.permission === 'granted');
+
   if ( ! can_notify )
   {
     // this is actually an auto-approval in Windows PWA
