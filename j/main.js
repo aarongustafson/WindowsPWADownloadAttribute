@@ -4,8 +4,7 @@
 if ( 'Windows' in window )
 {
   var WinRT_js_files = [
-        '/j/WinRT/download.js',
-        '/j/WinRT/toast.js'
+        '/j/WinRT/download.js'
       ],
       script = document.createElement('script');
 
