@@ -4,10 +4,10 @@
   
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <title>Testing <code>download</code> in a Windows PWA</title>
+  <title>Testing download in a Windows PWA</title>
   <link rel="manifest" href="manifest.json">
   <!--  Styles  -->
-  <link rel="stylesheet" href="/c/default.css">
+  <link rel="stylesheet" href="c/default.css">
 </head>
 <body>
   <header>
@@ -17,7 +17,7 @@
   <main>
     <p>Tests:</p>
     <ul>
-      <li><a href="/manifest.json" download>Local Download</a></li>
+      <li><a href="manifest.json" download>Local Download</a></li>
       <li><a href="https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085cf14.svg" download>Cross-origin Download</a></li>
     </ul>
   </main>
@@ -29,9 +29,9 @@
   <!-- Scripts -->
   <script>
     if (navigator.serviceWorker) {
-      navigator.serviceWorker.register('/sw.js');
+      navigator.serviceWorker.register('sw.js');
     }
   </script>
-  <script src="/j/main.js"></script>
+  <script src="j/main.js"></script>
 </body>
 </html>
